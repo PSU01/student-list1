@@ -13,7 +13,7 @@ services:
     networks:
       - pozos
     ports:
-      - 80:80
+      - 8002:80
     depends_on:
       - pozos-api
 
@@ -25,10 +25,6 @@ services:
     volumes:
       - ./simple_api/student_age.json:/data/student_age.json
     ports:
-      - 4000:5000
+      - 5000:5000
     networks:
       - pozos
-
-networks:
-  pozos:
-    name: pozos

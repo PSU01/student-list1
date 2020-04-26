@@ -1,13 +1,11 @@
 FROM python:2.7-stretch
 #Maintainer of image
-LABEL maintainer="175777@supinfo.com"
+LABEL maintainer="patricsunday@gmail.com"
 #Install of dependencies
 RUN apt-get update -y && apt-get install python-dev python3-dev libsasl2-dev python-dev libldap2-dev libssl-dev -y
 RUN pip install flask flask_httpauth flask_simpleldap python-dotenv
 #COPY SOURCE CODE IN THE IMAGE
 COPY student_age.py /
-#COPY TEST CODE
-COPY run_tests.sh /
 #CREATE DATA FOLDER
 VOLUME [ "/data" ]
 #EXPOSE PORT
